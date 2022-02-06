@@ -25,7 +25,9 @@
   <hr>
   <br>
   <h3><span class="text-muted">Teste de:</span> Two-way Binding</h3>
-  <input type="text" (keyup)="apertouATecla($event)" placeholder="Digite aqui o texto">
+  <!--input type="text" (keyup)="apertouATecla($event)" placeholder="Digite aqui o texto"-->
+  <!--input type="text" [ngModel] = "nome" (ngModelChange) = "nome = $event" placeholder="Digite aqui o texto"-->
+  <input type="text" [(ngModel)]= "nome" placeholder="Digite aqui o texto">
   &nbsp;
   <label>Mensagem: "{{ nome | uppercase }}"</label>
   <br>
