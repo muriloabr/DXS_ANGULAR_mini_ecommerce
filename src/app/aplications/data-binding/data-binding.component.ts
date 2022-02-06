@@ -1,4 +1,3 @@
-import { UpperCasePipe } from '@angular/common';
 import { Component, OnInit, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
 
 @Component({
