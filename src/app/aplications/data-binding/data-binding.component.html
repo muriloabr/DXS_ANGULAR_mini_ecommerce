@@ -1,0 +1,17 @@
+<div class="container main-container">
+  <h3><span class="text-muted">Teste de:</span> Interpolation</h3>
+  <br>
+  <p>
+    Identificamos {{ contadorCliques }} cliques realizados!
+  </p>
+  <br><br><br>
+  <h3><span class="text-muted">Teste de:</span> Property Binding</h3>
+  <br>
+  <button class="btn btn-danger" [disabled]="contadorCliques <= 10">{{ textoBotao10Cliques }}</button>
+  <br><br>
+  <figure class="figure">
+    <img [src]="imgLink" height="150px" width="auto" class="figure-img img-fluid" alt="Software Solutions logo" />
+    <figcaption class="figure-caption">Imagem: Software Solutions</figcaption>
+  </figure>
+  <br>
+</div>
