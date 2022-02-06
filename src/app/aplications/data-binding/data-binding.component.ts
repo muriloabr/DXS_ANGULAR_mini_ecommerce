@@ -32,7 +32,13 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
   public contadorCliques: number = 0;
   public imgLink: string = 'https://dataxstudios.com.br/assets/images/DXS_software.png';
   public textoBotao10Cliques: string = this.mensagensBotao10Cliques[0];
-  public nome: string = "";
+  public nome_paraTwoWay_falsoTwoWay: string = "";
+  public nome_paraTwoWay_explicito: string = "";
+  public nome_paraTwoWay: string = "btn-warning";
+
+  /*apertouATecla(event: any){  //manualmente o falsoTwoWay sendo criado por tecla keyUp
+    this.nome_paraTwoWay_falsoTwoWay = event.target.value;
+  }*/
 
   adicionarClique(): void {
     this.contadorCliques++;
@@ -42,7 +48,5 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
     this.contadorCliques!=0?this.contadorCliques = 0:'';
   }
 
-  apertouATecla(event: any){
-    this.nome = event.target.value;
-  }
+  
 }

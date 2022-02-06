@@ -1,7 +1,12 @@
 <div class="container main-container">
   <h3><span class="text-muted">Teste de:</span> Interpolation</h3>
   <br>
-  <p>
+  <!--ngClass condicional aonde todas classes sao cumulativas se : true-->
+  <p [ngClass]="{
+    'text-danger':contadorCliques <= 5,
+    'text-primary':contadorCliques <= 9,
+    'text-success':contadorCliques > 9  
+  }">
     Identificamos {{ contadorCliques }} cliques realizados!
   </p>
   <hr>
@@ -25,10 +30,14 @@
   <hr>
   <br>
   <h3><span class="text-muted">Teste de:</span> Two-way Binding</h3>
-  <!--input type="text" (keyup)="apertouATecla($event)" placeholder="Digite aqui o texto"-->
-  <!--input type="text" [ngModel] = "nome" (ngModelChange) = "nome = $event" placeholder="Digite aqui o texto"-->
-  <input type="text" [(ngModel)]= "nome" placeholder="Digite aqui o texto">
+  <!--input type="text" (keyup)="apertouATecla($event)" placeholder="Digite aqui o texto"  \\MODO MANUAL DE CAPTURAR O DADO PASSANDO A REFERENCIA DO OBJETO PRA COPIAR O VALOR NO CODIGO>
   &nbsp;
-  <label>Mensagem: "{{ nome | uppercase }}"</label>
+  <label>Mensagem: "{{ nome_paraTwoWay_falsoTwoWay | uppercase }}"</label-->
+  <!--input type="text" [ngModel] = "nome_paraTwoWay_explicito" (ngModelChange) = "nome_paraTwoWay_explicito = $event" placeholder="Digite aqui o texto" //ABAIXO A FORMA ELEGANTE DE FAZER ISSO >
+  &nbsp;
+  <label>Mensagem: "{{ nome_paraTwoWay_explicito | uppercase }}"</label-->
+  <input type="text" [(ngModel)]= "nome_paraTwoWay" placeholder="Digite aqui o texto">
+  &nbsp;
+  <label [ngClass]="nome_paraTwoWay">Mensagem: "{{ nome_paraTwoWay | uppercase }}"</label>
   <br>
 </div>
