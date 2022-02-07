@@ -8,10 +8,23 @@ import { Component, OnInit, OnChanges, SimpleChanges, DoCheck } from '@angular/c
 
 export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
 
+  private mensagensBotao10Cliques = [ '10 CLIQUES = LIBERAR', 'LIBERADO!' ];
+  public contadorCliques: number = 0;
+  public imgLink: string = 'https://dataxstudios.com.br/assets/images/DXS_software.png';
+  public textoBotao10Cliques: string = this.mensagensBotao10Cliques[0];
+  public nome_paraTwoWay_falsoTwoWay: string = "";
+  public nome_paraTwoWay_explicito: string = "";
+  public nome_paraTwoWay: string = "btn-warning";
+  public listaItens: Array<{ nome: string, color: string, img: string, podeVoar: boolean, ativo: boolean }> = [];
+  public dinoDestaque: number = 0;
+  public filtro_requerVoar = false;
+
   constructor() { }
 
   ngOnInit(): void {
-    this.reiniciarListaItens();
+    console.log('PASSOU PELO ngOnInit!');
+    this.reiniciarListaItens();  
+    this.piscar();  
   }
 
   ngDoCheck(): void {
@@ -28,15 +41,6 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
       console.log('PASSOU PELO ngOnChanges!');      
   }
   
-  private mensagensBotao10Cliques = [ '10 CLIQUES = LIBERAR', 'LIBERADO!' ];
-  public contadorCliques: number = 0;
-  public imgLink: string = 'https://dataxstudios.com.br/assets/images/DXS_software.png';
-  public textoBotao10Cliques: string = this.mensagensBotao10Cliques[0];
-  public nome_paraTwoWay_falsoTwoWay: string = "";
-  public nome_paraTwoWay_explicito: string = "";
-  public nome_paraTwoWay: string = "btn-warning";
-  public listaItens: Array<{ nome: string, color: string, img: string }> = [];
-
   /*apertouATecla(event: any){  //manualmente o falsoTwoWay sendo criado por tecla keyUp
     this.nome_paraTwoWay_falsoTwoWay = event.target.value;
   }*/
@@ -55,12 +59,70 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
 
   reiniciarListaItens(){
     this. listaItens = [
-      { nome: 'TIRANOSSAURO REX', color: 'green ', img: './assets/dinos/tr.jpg'},
-      { nome: 'PTERANODONTE', color: 'red ', img: './assets/dinos/pd.jpg'},
-      { nome: 'MOSASSAURO', color: 'blue ', img: './assets/dinos/mo.jpg'},
-      { nome: 'BRAQUIOSSAURO', color: 'grey ', img: './assets/dinos/bo.jpg'},
-      { nome: 'STYGIMOLOCH', color: 'yellow', img: './assets/dinos/sm.png'}
+      { nome: 'TIRANOSSAURO REX', color: 'green ', img: './assets/dinos/tr.jpg', podeVoar: false, ativo: true},
+      { nome: 'PTERANODONTE', color: 'red ', img: './assets/dinos/pd.jpg', podeVoar: true, ativo: true},
+      { nome: 'MOSASSAURO', color: 'blue ', img: './assets/dinos/mo.jpg', podeVoar: false, ativo: true},
+      { nome: 'BRAQUIOSSAURO', color: 'grey ', img: './assets/dinos/bo.jpg', podeVoar: false, ativo: true},
+      { nome: 'STYGIMOLOCH', color: 'yellow', img: './assets/dinos/sm.png', podeVoar: false, ativo: true}
     ];
+  } 
+
+  piscar(): void{
+    setInterval(
+      () => {
+        this.verQualDinoEstaEmDestaque()
+      }, 1000);
   }
-  
+
+  verQualDinoEstaEmDestaque(): number{
+    if((this.dinoDestaque+1)>=this.listaItens.length){
+      this.dinoDestaque = 0;
+    }else{
+      this.dinoDestaque += 1;
+    }
+    console.log(this.dinoDestaque);
+    return this.dinoDestaque;
+  }
+
+  verificarItemPodeSerListado(item: any, ativo = null, voar = null): boolean{
+    let passou = true;
+    if(ativo==null){
+      //sem filtro de ativo!
+    } else { //com filtro de ativo!
+      if(ativo==true){
+        if(item.ativo == true){
+          passou = true;
+        } else {
+          return false;
+        }
+      }
+      if(ativo==false){
+        if(item.ativo == false){
+          passou = true;
+        } else {
+          return false;
+        }
+      }
+    }
+
+    if(voar==null){
+      //sem filtro de voar!
+    } else { //com filtro de voar!
+      if(voar==true){
+        if(item.voar == true){
+          passou = true;
+        } else {
+          return false;
+        }
+      }
+      if(voar==false){
+        if(item.voar == false){
+          passou = true;
+        } else {
+          return false;
+        }
+      }
+    }
+    return passou;
+  }
 }
