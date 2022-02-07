@@ -11,6 +11,7 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
   constructor() { }
 
   ngOnInit(): void {
+    this.reiniciarListaItens();
   }
 
   ngDoCheck(): void {
@@ -34,10 +35,15 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
   public nome_paraTwoWay_falsoTwoWay: string = "";
   public nome_paraTwoWay_explicito: string = "";
   public nome_paraTwoWay: string = "btn-warning";
+  public listaItens: Array<{ nome: string, color: string, img: string }> = [];
 
   /*apertouATecla(event: any){  //manualmente o falsoTwoWay sendo criado por tecla keyUp
     this.nome_paraTwoWay_falsoTwoWay = event.target.value;
   }*/
+
+  removerItemDaLista(itemPosition: number){
+    this.listaItens.splice(itemPosition, 1); //recebe o item e converte em number para retirar da lista!
+  }
 
   adicionarClique(): void {
     this.contadorCliques++;
@@ -47,5 +53,14 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
     this.contadorCliques!=0?this.contadorCliques = 0:'';
   }
 
+  reiniciarListaItens(){
+    this. listaItens = [
+      { nome: 'TIRANOSSAURO REX', color: 'green ', img: './assets/dinos/tr.jpg'},
+      { nome: 'PTERANODONTE', color: 'red ', img: './assets/dinos/pd.jpg'},
+      { nome: 'MOSASSAURO', color: 'blue ', img: './assets/dinos/mo.jpg'},
+      { nome: 'BRAQUIOSSAURO', color: 'grey ', img: './assets/dinos/bo.jpg'},
+      { nome: 'STYGIMOLOCH', color: 'yellow', img: './assets/dinos/sm.png'}
+    ];
+  }
   
 }
