@@ -1,27 +1,11 @@
-# DXSANGULARMiniEcommerce
+# DXS | ANGULAR : mini e-commerce
+<img src="https://dataxstudios.com.br/assets/images/logo_DXS_400_190.png" alt="dxs" width="100"/> 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+Aplicação e estudo do conceito de Angular 13 SPA - Básico
 
-## Development server
+- DataBinding, diretivas, consumindo serviços de Json com HttpClient, rotas, módulos, decorators e muito mais ;
+- ✨Exemplos de aplicação com este conceito + comentários.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Tela de resultado final:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_1.PNG)<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_2.PNG)
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Fique por dentro deste repositório com atualizações sempre que possível!<br>[ANGULAR] [JAVASCRIPT] [NODEJS] #angular #javascript #nodejs
