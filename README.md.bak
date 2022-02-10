@@ -17,7 +17,7 @@ npm install -g json-server
 json-server --watch produtos.json
 
 ## Run da aplicação:
-_ng serve --live-reload_
+_npm start_
 
 
 Fique por dentro deste repositório com atualizações sempre que possível!<br>[ANGULAR] [JAVASCRIPT] [NODEJS] #angular #javascript #nodejs
