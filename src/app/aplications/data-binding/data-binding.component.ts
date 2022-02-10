@@ -15,7 +15,8 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
   public nome_paraTwoWay_falsoTwoWay: string = "";
   public nome_paraTwoWay_explicito: string = "";
   public nome_paraTwoWay: string = "btn-warning";
-  public listaItens: Array<{ nome: string, color: string, img: string, podeVoar: boolean, ativo: boolean }> = [];
+  private listaItens: Array<{ nome: string, color: string, img: string, podeVoar: boolean, ativo: boolean }> = [];
+  public listaItensAExibir = this.listaItens;
   public dinoDestaque: number = 0;
   public filtro_requerVoar: any = null;
   public filtro_requerAtivo: any = null;
@@ -66,6 +67,7 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
       { nome: 'BRAQUIOSSAURO', color: 'grey ', img: './assets/dinos/bo.jpg', podeVoar: false, ativo: true},
       { nome: 'STYGIMOLOCH', color: 'yellow', img: './assets/dinos/sm.png', podeVoar: false, ativo: true}
     ];
+    this.listaItensAExibir = this.listaItens;
   } 
 
   piscar(): void{
@@ -76,11 +78,11 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
   }
 
   verQualDinoEstaEmDestaque(): number{
-    if((this.dinoDestaque+1)>this.listaItens.length){ // se não tiver próximo item
+    if((this.dinoDestaque+1)>this.listaItensAExibir.length){ // se não tiver próximo item
       this.dinoDestaque = 0;
     }else{ //se tiver próximo item
-      if(this.listaItens[this.dinoDestaque].ativo==false){ //se item for desativado de exibir
-        if((this.dinoDestaque+2)>this.listaItens.length){ // se tem item proximo ou volta pro zero
+      if(this.listaItensAExibir[this.dinoDestaque].ativo==false){ //se item for desativado de exibir
+        if((this.dinoDestaque+2)>this.listaItensAExibir.length){ // se tem item proximo ou volta pro zero
           this.dinoDestaque += 2;
         }else{
           this.dinoDestaque = 0;
@@ -115,8 +117,21 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
     }
   }
 
-  verificarItemPodeSerListado(item: any, voar: any = null): boolean{
+  listaItensAExibir_espelhar(){ //falta implementar um metodo que remove por lambda os items desativados da listaAExibir
+    this.listaItensAExibir = this.listaItens.filter( (elem) => {
+        if (!(elem.ativo == false)) {
+          return elem;
+        }
+        else
+        {
+          return null; 
+        }
+      } );
+  }
+  
+
+  verificarItemPodeSerListado(item: any, voar: any = null): void{
     this.filtrarPodeVoar(item, voar);
-    return item.ativo;
+    this.listaItensAExibir_espelhar();
   }
 }

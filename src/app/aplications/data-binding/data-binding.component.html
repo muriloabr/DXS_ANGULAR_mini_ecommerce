@@ -50,13 +50,12 @@
   <div class="container main-container">
     <div class="row text-center" >
       <h4 [class]="'col-md-12'"><span class="text-muted">Extinção: </span> Abaixo temos dinossauros, devem existir mais de 2 raças, senão todos serão extintos!</h4>
-      <ng-template [ngIf]="(listaItens.length > 2)"> <!-- LISTA SE HOUVEREM ITEMS SUFICIENTES! INICIO -->
-        <div *ngFor="let item of listaItens; let indice = index" class="col-md-4" style="padding-bottom: 30px;"> <!-- ouve a lista e cria os items conforme tem dados, por isso é importante ter metodos de esconder os dados que forem sendo filtrados -->
+      <ng-template [ngIf]="(listaItensAExibir.length > 2)"> <!-- LISTA SE HOUVEREM ITEMS SUFICIENTES! INICIO -->
+        <div *ngFor="let item of listaItensAExibir; let indice = index" class="col-md-4" style="padding-bottom: 30px;"> <!-- ouve a lista e cria os items conforme tem dados, por isso é importante ter metodos de esconder os dados que forem sendo filtrados -->
           <!-- lista os itens conforme os filtros ativos -->
-          <div [id]="(listaItens.indexOf(item))"
-            [hidden]="!verificarItemPodeSerListado(item, filtro_requerVoar)"
-            [ngStyle]="{'color': (dinoDestaque==(listaItens.indexOf(item)))?'':item.color, 'background-color': '#dcdcdc'}" 
-            [class]="{'card': true, 'h-100': true, 'text-white': (dinoDestaque==(listaItens.indexOf(item)))?true:false, 'bg-success': (dinoDestaque==(listaItens.indexOf(item)))?true:false}">
+          <div [id]="(listaItensAExibir.indexOf(item))"            
+            [ngStyle]="{'color': (dinoDestaque==(listaItensAExibir.indexOf(item)))?'':item.color, 'background-color': '#dcdcdc'}" 
+            [class]="{'card': true, 'h-100': true, 'text-white': (dinoDestaque==(listaItensAExibir.indexOf(item)))?true:false, 'bg-success': (dinoDestaque==(listaItensAExibir.indexOf(item)))?true:false}">
               
               <button (click)="removerItemDaLista(indice)" type="button" [class]="'btn btn-close col-md-2'" [style.color]="'red'" [title]="'Extinguir este dino!'" aria-label="Close">
                 <span [class]="'blockquote'">×</span>
@@ -76,7 +75,7 @@
           <label class="form-check-label" for="flexSwitchCheckDefault">&nbsp;Só os que voam!</label>
         </div>
       </ng-template><!-- LISTA SE HOUVEREM ITEMS SUFICIENTES! FIM -->
-      <ng-template [ngIf]="(listaItens.length <= 2)"> <!-- LISTA SE HOUVEREM ITEMS INSUFICIENTES! INICIO -->
+      <ng-template [ngIf]="(listaItensAExibir.length <= 2)"> <!-- LISTA SE HOUVEREM ITEMS INSUFICIENTES! INICIO -->
         <div class="col-md-12 text-danger" >
           <h4>A extinção chegou!</h4>
           <button class="btn btn-danger" (click)="reiniciarListaItens()">FAZER RECONSTITUIÇÃO GENÉTICA!</button>
