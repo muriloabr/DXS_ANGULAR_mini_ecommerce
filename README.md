@@ -9,4 +9,7 @@ Aplicação e estudo do conceito de Angular 13 SPA - Básico
 ### Tela do E-Commerce:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_1.PNG)<br>
 ### Tela de funcionalidades:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_2.PNG)
 
+## Preparação para run da aplicação:
+_npm install -g @angular/cli_
+
 Fique por dentro deste repositório com atualizações sempre que possível!<br>[ANGULAR] [JAVASCRIPT] [NODEJS] #angular #javascript #nodejs
