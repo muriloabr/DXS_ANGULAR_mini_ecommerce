@@ -10,14 +10,18 @@ Aplicação e estudo do conceito de Angular 13 SPA - Básico
 ### Tela de funcionalidades:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_2.PNG)
 
 ## Preparação para run da aplicação:
+_npm install_
 _npm install -g @angular/cli_
 
-## Server Json para testes de serviço(Opcional):
+## Server Json
 npm install -g json-server
 json-server --watch produtos.json
 
 ## Run da aplicação:
-_ng serve --live-reload_
+ng s -live-reload_
+
+## Variáveis de sistema:
+C:\Users\YourWindowsUser\AppData\Roaming\npm\node_modules\*
 
 
 Fique por dentro deste repositório com atualizações sempre que possível!<br>[ANGULAR] [JAVASCRIPT] [NODEJS] #angular #javascript #nodejs

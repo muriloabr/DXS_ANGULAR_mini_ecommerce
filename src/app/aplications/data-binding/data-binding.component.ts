@@ -17,7 +17,8 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
   public nome_paraTwoWay: string = "btn-warning";
   public listaItens: Array<{ nome: string, color: string, img: string, podeVoar: boolean, ativo: boolean }> = [];
   public dinoDestaque: number = 0;
-  public filtro_requerVoar = false;
+  public filtro_requerVoar: any = null;
+  public filtro_requerAtivo: any = null;
 
   constructor() { }
 
@@ -75,54 +76,47 @@ export class DataBindingComponent implements OnInit, OnChanges, DoCheck {
   }
 
   verQualDinoEstaEmDestaque(): number{
-    if((this.dinoDestaque+1)>=this.listaItens.length){
+    if((this.dinoDestaque+1)>this.listaItens.length){ // se não tiver próximo item
       this.dinoDestaque = 0;
-    }else{
-      this.dinoDestaque += 1;
+    }else{ //se tiver próximo item
+      if(this.listaItens[this.dinoDestaque].ativo==false){ //se item for desativado de exibir
+        if((this.dinoDestaque+2)>this.listaItens.length){ // se tem item proximo ou volta pro zero
+          this.dinoDestaque += 2;
+        }else{
+          this.dinoDestaque = 0;
+        }        
+      }
+      else{
+        this.dinoDestaque += 1;
+      }
     }
     console.log(this.dinoDestaque);
     return this.dinoDestaque;
   }
 
-  verificarItemPodeSerListado(item: any, ativo = null, voar = null): boolean{
-    let passou = true;
-    if(ativo==null){
-      //sem filtro de ativo!
-    } else { //com filtro de ativo!
-      if(ativo==true){
-        if(item.ativo == true){
-          passou = true;
-        } else {
-          return false;
-        }
-      }
-      if(ativo==false){
-        if(item.ativo == false){
-          passou = true;
-        } else {
-          return false;
-        }
-      }
-    }
-
-    if(voar==null){
-      //sem filtro de voar!
+  filtrarPodeVoar(item: any, podeVoar: any): void{
+    if(podeVoar==false){  //sem filtro de voar!
+      item.ativo = true;
     } else { //com filtro de voar!
-      if(voar==true){
-        if(item.voar == true){
-          passou = true;
+      if(podeVoar==true){
+        if(item.podeVoar == true){
+          item.ativo = true; //passou no teste
         } else {
-          return false;
+          item.ativo = false;
         }
       }
-      if(voar==false){
-        if(item.voar == false){
-          passou = true;
+      if(podeVoar==false){
+        if(item.podeVoar == false){
+          item.ativo = true;
         } else {
-          return false;
+          item.ativo = false;
         }
       }
     }
-    return passou;
+  }
+
+  verificarItemPodeSerListado(item: any, voar: any = null): boolean{
+    this.filtrarPodeVoar(item, voar);
+    return item.ativo;
   }
 }

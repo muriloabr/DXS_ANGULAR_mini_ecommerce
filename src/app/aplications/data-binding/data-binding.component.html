@@ -49,12 +49,12 @@
   <h3><span class="text-muted">Teste de:</span> Diretivas Estruturais</h3>
   <div class="container main-container">
     <div class="row text-center" >
-      <h4 [class]="'col-md-12'"><span class="text-muted">Extinção: </span> Devem existir mais de 2 raças, senão todos serão extintos!</h4>
+      <h4 [class]="'col-md-12'"><span class="text-muted">Extinção: </span> Abaixo temos dinossauros, devem existir mais de 2 raças, senão todos serão extintos!</h4>
       <ng-template [ngIf]="(listaItens.length > 2)"> <!-- LISTA SE HOUVEREM ITEMS SUFICIENTES! INICIO -->
         <div *ngFor="let item of listaItens; let indice = index" class="col-md-4" style="padding-bottom: 30px;"> <!-- ouve a lista e cria os items conforme tem dados, por isso é importante ter metodos de esconder os dados que forem sendo filtrados -->
           <!-- lista os itens conforme os filtros ativos -->
           <div [id]="(listaItens.indexOf(item))"
-            [hidden]="verificarItemPodeSerListado(item)"
+            [hidden]="!verificarItemPodeSerListado(item, filtro_requerVoar)"
             [ngStyle]="{'color': (dinoDestaque==(listaItens.indexOf(item)))?'':item.color, 'background-color': '#dcdcdc'}" 
             [class]="{'card': true, 'h-100': true, 'text-white': (dinoDestaque==(listaItens.indexOf(item)))?true:false, 'bg-success': (dinoDestaque==(listaItens.indexOf(item)))?true:false}">
               
@@ -68,6 +68,12 @@
                 </a>
                 <h4 class="card-title">{{ item.nome | titlecase }}</h4>
             </div>
+        </div>
+        <h4 [class]="'col-md-12'"><span class="text-muted">Filtros: </span> Filtre sua visualização acima!</h4>
+        <div class="form-check form-switch">
+          <input class="check-input" type="checkbox" id="flexSwitchCheckDefault"
+            [checked]="filtro_requerVoar" (change)="filtro_requerVoar = !filtro_requerVoar" >&nbsp;
+          <label class="form-check-label" for="flexSwitchCheckDefault">&nbsp;Só os que voam!</label>
         </div>
       </ng-template><!-- LISTA SE HOUVEREM ITEMS SUFICIENTES! FIM -->
       <ng-template [ngIf]="(listaItens.length <= 2)"> <!-- LISTA SE HOUVEREM ITEMS INSUFICIENTES! INICIO -->
