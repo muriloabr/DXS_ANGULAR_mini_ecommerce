@@ -5,7 +5,7 @@
 
 - DataBindings, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
 
-✨Exemplos dentro da aplicação + comentários.
+✨Exemplos de funcionaliades dentro da aplicação + comentários.
 
 ### Tela do E-Commerce:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_1.PNG)<br>
 ### Tela de funcionalidades:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_2.PNG)
