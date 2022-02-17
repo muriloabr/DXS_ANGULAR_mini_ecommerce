@@ -5,7 +5,7 @@
 
 
   **Conceitos abordados:** 
-- DataBinding: property binding, event binding, two-way binding, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
+- Data bindings: property binding, event binding, two-way binding, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
 
 ✨Exemplos de funcionaliades dentro da aplicação + comentários.
 
