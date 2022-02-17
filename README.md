@@ -3,7 +3,7 @@
 
 **Aplicação e estudo sobre os conceitos de Angular 13 com foco em compreender as bases do SPA**  
 
-- DataBinding: event binding, two-way binding, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
+- DataBinding: property binding, event binding, two-way binding, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
 
 ✨Exemplos de funcionaliades dentro da aplicação + comentários.
 
