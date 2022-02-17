@@ -1,7 +1,7 @@
 # DXS | ANGULAR : mini e-commerce
 <img src="https://dataxstudios.com.br/assets/images/logo_DXS_400_190.png" alt="dxs" width="100"/> 
 
-**Aplicação e estudo sobre os conceitos de Angular 13 com foco em compreender as bases de SPA**  
+**Aplicação e estudo sobre os conceitos de Angular 13 com foco em compreender as bases do SPA**  
 
 DataBindings, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
 ✨Exemplos dentro da aplicação + comentários.
