@@ -12,11 +12,11 @@
 
 ## Comandos de preparação para rodar a aplicação:
 ``npm install  
-  npm install -g @angular/cli``  
+npm install -g @angular/cli``  
 
 ## Rodando um Server Json próprio:
 ``npm install -g json-server  
-  json-server --watch produtos.json``  
+json-server --watch produtos.json``  
 
 ## Rodando a aplicação:
 ``ng s -live-reload``  
