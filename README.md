@@ -11,15 +11,15 @@
 ### Tela de funcionalidades:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_2.PNG)
 
 ## Comandos de preparação para rodar a aplicação:
-``npm install
-npm install -g @angular/cli``
+``npm install  
+npm install -g @angular/cli``  
 
 ## Rodando um Server Json próprio:
-``npm install -g json-server
-json-server --watch produtos.json``
+``npm install -g json-server  
+json-server --watch produtos.json``  
 
 ## Rodando a aplicação:
-``ng s -live-reload``
+``ng s -live-reload``  
 
 Fiquem por dentro deste repositório com atualizações sempre que possível!  
 [ANGULAR] [JAVASCRIPT] [NODEJS] #angular #javascript #nodejs  
