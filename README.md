@@ -3,7 +3,7 @@
 
 **Aplicação e estudo sobre os conceitos de Angular 13 com foco em compreender as bases do SPA**  
 
-DataBindings, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
+- DataBindings, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
 ✨Exemplos dentro da aplicação + comentários.
 
 ### Tela do E-Commerce:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_1.PNG)<br>
