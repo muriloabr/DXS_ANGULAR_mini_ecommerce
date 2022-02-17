@@ -3,6 +3,8 @@
 
 **Aplicação e estudo sobre os conceitos de Angular 13 com foco em compreender as bases do SPA**  
 
+
+  **Conceitos abordados:** 
 - DataBinding: property binding, event binding, two-way binding, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
 
 ✨Exemplos de funcionaliades dentro da aplicação + comentários.
@@ -15,8 +17,8 @@
 npm install -g @angular/cli``  
 
 ## Rodando um Server Json próprio:  
-``npm install -g json-server  
-json-server --watch produtos.json``  
+``npm install -g json-server``  
+``json-server --watch produtos.json``   
 
 ## Rodando a aplicação:  
 ``ng s -live-reload``  
