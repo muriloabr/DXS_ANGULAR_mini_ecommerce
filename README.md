@@ -1,27 +1,24 @@
 # DXS | ANGULAR : mini e-commerce
 <img src="https://dataxstudios.com.br/assets/images/logo_DXS_400_190.png" alt="dxs" width="100"/> 
 
-Aplicação e estudo do conceito de Angular 13 SPA - Básico
+**Aplicação e estudo sobre os conceitos de Angular 13 com foco em compreender as bases de SPA**  
 
-- DataBinding, diretivas, consumindo serviços de Json com HttpClient, rotas, módulos, decorators e muito mais ;
-- ✨Exemplos de aplicação com este conceito + comentários.
+DataBindings, diretivas, consumo de serviços em Json com HttpClient, rotas, módulos, decorators e muito mais.  
+✨Exemplos dentro da aplicação + comentários.
 
 ### Tela do E-Commerce:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_1.PNG)<br>
 ### Tela de funcionalidades:<br>![imagem da aplicação](https://dataxstudios.com.br/assets/images/github/angular_mini_ecommerce_2.PNG)
 
-## Preparação para run da aplicação:
-_npm install_
-_npm install -g @angular/cli_
+## Comandos de preparação para rodar a aplicação:
+``npm install
+npm install -g @angular/cli``
 
-## Server Json
-npm install -g json-server
-json-server --watch produtos.json
+## Rodando um Server Json próprio:
+``npm install -g json-server
+json-server --watch produtos.json``
 
-## Run da aplicação:
-ng s -live-reload_
+## Rodando a aplicação:
+``ng s -live-reload``
 
-## Variáveis de sistema:
-C:\Users\YourWindowsUser\AppData\Roaming\npm\node_modules\*
-
-
-Fique por dentro deste repositório com atualizações sempre que possível!<br>[ANGULAR] [JAVASCRIPT] [NODEJS] #angular #javascript #nodejs
+Fiquem por dentro deste repositório com atualizações sempre que possível!  
+[ANGULAR] [JAVASCRIPT] [NODEJS] #angular #javascript #nodejs  
